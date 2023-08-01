@@ -2,7 +2,7 @@
 <div align="center">
   <h3>Full time fun seeker</h3>
 
-  <img height=160 src='https://github-readme-stats.vercel.app/api/top-langs/?username=shramee&layout=compact' alt="Shramee's languages" /> <img height=160 src='https://github-readme-stats.vercel.app/api/?username=shramee&layout=compact' alt="Shramee's stats" />
+  <img height=160 src='https://github-readme-stats.vercel.app/api/top-langs/?username=shramee&layout=compact&theme=monokai' alt="Shramee's languages" /> <img height=160 src='https://github-readme-stats.vercel.app/api/?username=shramee&theme=monokai&show_icons=true' alt="Shramee's stats" />
 </div>
 
 
