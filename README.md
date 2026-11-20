@@ -1,23 +1,61 @@
-
 <div align="center">
-  <h3>Full time fun seeker</h3>
 
-  <img width="42.6%" src='https://github-readme-stats.vercel.app/api/top-langs/?username=shramee&layout=compact&theme=monokai&bg_color=22272e&hide_border=true' alt="Shramee's languages" /> <img width="56%" src='https://github-readme-stats.vercel.app/api/?username=shramee&include_all_commits=true&theme=monokai&show_icons=true&bg_color=22272e&hide_border=true&rank_icon=default' alt="Shramee's stats" />
+# Shramee Srivastav
+
+Founder of [MIST.cash](https://mist.cash). Based in Singapore.
+
+[![X @shrameetweets](https://img.shields.io/badge/@shrameetweets-000000?style=flat&logo=x&logoColor=white)](https://x.com/shrameetweets)
+[![mist.cash](https://img.shields.io/badge/mist.cash-1f2328?style=flat&logo=googlechrome&logoColor=white)](https://mist.cash)
+[![X @_mistcash](https://img.shields.io/badge/@__mistcash-000000?style=flat&logo=x&logoColor=white)](https://x.com/_mistcash)
+
 </div>
 
+I write zero-knowledge circuits and the payments infrastructure around them. Most of my time goes into pairings, recursive Groth16, Cairo and Starknet.
 
+## Highlights
 
-<!--
-**shramee/shramee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+- First ZK proof on Starknet.
+- Paper on pairing proofs accepted at IACR TCHES 2027.
+- Core contributions to [gnark](https://github.com/Consensys/gnark) and [Aztec](https://github.com/AztecProtocol/aztec-packages).
+- Created [Starklings](https://github.com/shramee/starklings), an interactive tutorial for Cairo and Starknet. 470+ stars.
 
-Here are some ideas to get you started:
+## MIST.cash
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Bring your own compliance to private payments. Each fintech or compliance provider runs its own Reserve with its own KYC, KYT and jurisdiction rules.
+
+- [mistcash/sdk](https://github.com/mistcash/sdk): TypeScript SDK for adding private payments to an app.
+- [Hidemi](https://hidemi.mist.cash): consumer app on Starknet USDC, live since January 2026.
+
+## Research
+
+| Repo | What it is |
+| --- | --- |
+| [mistcash/polyring](https://github.com/mistcash/polyring) | Groth16-in-Groth16 recursion for gnark. Maintained code for my TCHES 2027 paper. Unaudited. |
+| [shramee/cairo_pairing](https://github.com/shramee/cairo_pairing) | Elliptic curve pairings in Cairo, with a residue witness for the final exponentiation. |
+| [mistcash/pq](https://github.com/mistcash/pq) | Post-quantum messaging for private payments and peer coordination. |
+| [mistcash/groth16-wasm-webgpu](https://github.com/mistcash/groth16-wasm-webgpu) | Browser benchmark of arkworks, gnark and snarkjs on a 53k-constraint circuit. |
+| [shramee/noir-elgamal](https://github.com/shramee/noir-elgamal) | Additively homomorphic ElGamal on elliptic curves, in Noir. |
+| [shramee/useless-zkvm](https://github.com/shramee/useless-zkvm) | A very small zkVM on Stwo. |
+
+## Open source contributions
+
+| Project | Merged work |
+| --- | --- |
+| **gnark** | [Pairing check optimisation](https://github.com/Consensys-Incorporated/gnark/pull/1335), [final exponentiation select optimisation](https://github.com/Consensys-Incorporated/gnark/pull/1328), [no division in the Miller loop result](https://github.com/Consensys-Incorporated/gnark/pull/1363), [faster ECDSA on all curves](https://github.com/Consensys-Incorporated/gnark/pull/1384), faster sparse Fp6 multiplication ([#1076](https://github.com/Consensys-Incorporated/gnark/pull/1076), [#1077](https://github.com/Consensys-Incorporated/gnark/pull/1077)), [multi-pairing assertion reusing a GT element](https://github.com/Consensys-Incorporated/gnark/pull/1808), bug fixes ([#1753](https://github.com/Consensys-Incorporated/gnark/pull/1753), [#1814](https://github.com/Consensys-Incorporated/gnark/pull/1814)) |
+| **Aztec** | [More ZK flavors in bb.js](https://github.com/AztecProtocol/aztec-packages/pull/14072) |
+| **Garaga** | [Residue witness](https://github.com/keep-starknet-strange/garaga/pull/122), [Honk verification errors](https://github.com/keep-starknet-strange/garaga/pull/391), [gnark Groth16 proof parsing](https://github.com/keep-starknet-strange/garaga/pull/486) |
+| **arkworks** | [Stark curve and large 2-adicity field tests](https://github.com/arkworks-rs/algebra/pull/1001) |
+| **Cairo** | [u384 serde in 2 felts](https://github.com/starkware-libs/cairo/pull/6789) |
+| **Alexandria** | [ed25519 optimisations](https://github.com/keep-starknet-strange/alexandria/pull/306), [sha512 optimisation](https://github.com/keep-starknet-strange/alexandria/pull/308), [u512 arithmetic](https://github.com/keep-starknet-strange/alexandria/pull/303) |
+| **Dojo** | [Schema macro](https://github.com/dojoengine/dojo/pull/920), [enum introspection](https://github.com/dojoengine/dojo/pull/1019), [model read/write access](https://github.com/dojoengine/dojo/pull/1102), [bytes31 introspection](https://github.com/dojoengine/dojo/pull/2661) |
+
+Older Starknet tools: [Hanji](https://github.com/shramee/hanji) generates docs for Cairo libraries. [shhtarknet](https://github.com/shramee/shhtarknet) keeps secrets for Starknet contracts. [wasm-blockifier](https://github.com/shramee/wasm-blockifier) runs the Starknet blockifier in WASM.
+
+## Stats
+
+<div align="center">
+  <img height="170" src="cards/stats.svg" alt="Shramee's GitHub stats" />
+  <img height="170" src="cards/top-langs.svg" alt="Languages in repos pushed since 2021" />
+</div>
+
+<sub>Includes private contributions. Generated locally with <a href="https://github.com/stats-organization/github-stats-extended">github-stats-extended</a>.</sub>
