@@ -5,7 +5,7 @@
 # GitHub token, so private data never goes through a public instance.
 #
 # 1. Start the server. It needs the top-langs date filter and byte stats from
-#    stats-organization/github-stats-extended#746 and #747. Until they merge,
+#    stats-organization/github-stats-extended#746. Until it merges,
 #    use the branch on my fork:
 #      git clone -b feat/top-langs-stats-format-both https://github.com/shramee/github-readme-stats github-stats-extended
 #      cd github-stats-extended && pnpm install && pnpm --filter ./packages/core build
@@ -25,12 +25,11 @@ THEME="theme_light=light_github&theme_dark=github_dark&hide_border=true"
 # markup, styling and config languages, Hack (only a few bytes), and JavaScript
 HIDE="go%20template,bibtex%20style,css,html,less,twig,scss,sass,stylus,markdown,dockerfile,makefile,shell,batchfile,powershell,smarty,blade,handlebars,ejs,hcl,nix,procfile,vue,yacc,roff,xslt,apacheconf,hack,javascript"
 
-# Repos I own, plus repos in orgs I own (admin) that I've committed to. GitHub doesn't
+# 2022 to now: repos I own, plus repos in orgs I own (admin) that I've committed to. GitHub doesn't
 # record who created a repo, so committing is the proxy. Public and private.
 # The card can't filter by org, so every other repo it would see is excluded by name.
 # The list is built here at run time, so private repo names never get committed.
 # sotap is also excluded: it holds ~42 MB of generated TeX and swamps everything else.
-# stats_format=both shows the percentage and the size in bytes (GitHub doesn't expose line counts).
 # Needs the gh CLI, logged in as me.
 exclude_list() {
   local admin_orgs
@@ -53,8 +52,7 @@ exclude_list() {
   # exclude_repo matches names only: never exclude a name one of my kept repos also uses
   { echo sotap; printf '%s\n' "${drop[@]}" | grep -vxF -f <(printf '%s\n' "${keep[@]}"); } | sort -u | paste -sd, -
 }
-EXCLUDE="$(exclude_list)"
-LANGS="$SERVER/api/top-langs?username=$USER_NAME&layout=compact&langs_count=8&stats_format=both&card_width=450&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR&exclude_repo=$EXCLUDE&hide=$HIDE&$THEME"
+LANGS="$SERVER/api/top-langs?username=$USER_NAME&layout=compact&langs_count=8&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR&hide=$HIDE&$THEME"
 
 fetch() {
   curl -sSf "$1" -o "$OUT/$2"
@@ -67,5 +65,6 @@ fetch() {
 
 fetch "$SERVER/api?username=$USER_NAME&include_all_commits=true&show_icons=true&$THEME" stats.svg
 # repos are grouped by their last push date
-fetch "$LANGS&pushed_after=2022&custom_title=Languages%202022%20to%20now" top-langs-2022-now.svg
-fetch "$LANGS&pushed_after=2014&pushed_before=2022&custom_title=Languages%202014%20to%202021" top-langs-2014-2021.svg
+fetch "$LANGS&exclude_repo=$(exclude_list)&pushed_after=2022&custom_title=Languages%202022%20to%20now" top-langs-2022-now.svg
+# 2014 to 2021: every repo I own, belong to through an org, or collaborate on
+fetch "$LANGS&exclude_repo=sotap&pushed_after=2014&pushed_before=2022&custom_title=Languages%202014%20to%202021" top-langs-2014-2021.svg
