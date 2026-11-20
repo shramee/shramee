@@ -58,8 +58,9 @@ Older Starknet tools: [Hanji](https://github.com/shramee/hanji) generates docs f
   github-stats-extended server running with my own GitHub token, so they include
   private repos and contributions. To refresh: start the server (steps at the top
   of the script), run ./cards/generate.sh, commit the SVGs.
-  Languages cover repos I own and repos in orgs I own that I've committed to,
-  grouped by last push date. Sizes are bytes: GitHub doesn't expose line counts.
+  2022 to now covers repos I own and repos in orgs I own that I've committed to.
+  2014 to 2021 covers every repo I own, belong to through an org, or collaborate on.
+  Repos are grouped by last push date.
 -->
 
 <div align="center">
@@ -70,4 +71,4 @@ Older Starknet tools: [Hanji](https://github.com/shramee/hanji) generates docs f
   <img src="cards/top-langs-2014-2021.svg" alt="Languages in repos last pushed from 2014 to 2021" />
 </div>
 
-<sub>Includes private repos and contributions. Languages cover repos I own and repos I created in orgs I own, grouped by last push. Sizes are in bytes. Generated locally with <a href="https://github.com/stats-organization/github-stats-extended">github-stats-extended</a>, see <a href="cards/generate.sh">cards/generate.sh</a>.</sub>
+<sub>Includes private repos and contributions. Repos are grouped by last push. Generated locally with <a href="https://github.com/stats-organization/github-stats-extended">github-stats-extended</a>, see <a href="cards/generate.sh">cards/generate.sh</a>.</sub>
