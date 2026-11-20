@@ -59,7 +59,7 @@ Older Starknet tools: [Hanji](https://github.com/shramee/hanji) generates docs f
   private repos and contributions. To refresh: start the server (steps at the top
   of the script), run ./cards/generate.sh, commit the SVGs.
   2022 to now covers repos I own and repos in orgs I own that I've committed to.
-  2014 to 2021 covers every repo I own, belong to through an org, or collaborate on.
+  2014 to 2021 uses the card's defaults: repos I own, no languages hidden.
   Repos are grouped by last push date.
 -->
 
