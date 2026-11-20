@@ -66,5 +66,5 @@ fetch() {
 fetch "$SERVER/api?username=$USER_NAME&include_all_commits=true&show_icons=true&$THEME" stats.svg
 # repos are grouped by their last push date
 fetch "$LANGS&exclude_repo=$(exclude_list)&pushed_after=2022&custom_title=Languages%202022%20to%20now" top-langs-2022-now.svg
-# 2014 to 2021: every repo I own, belong to through an org, or collaborate on
-fetch "$LANGS&exclude_repo=sotap&pushed_after=2014&pushed_before=2022&custom_title=Languages%202014%20to%202021" top-langs-2014-2021.svg
+# 2014 to 2021: default card settings (repos I own, no hidden languages), only the date range and look changed
+fetch "$SERVER/api/top-langs?username=$USER_NAME&layout=compact&langs_count=8&$THEME&pushed_after=2014&pushed_before=2022&custom_title=Languages%202014%20to%202021" top-langs-2014-2021.svg
