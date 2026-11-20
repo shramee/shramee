@@ -147,7 +147,7 @@
           data-testid="lang-progress"
           x="0"
           y="0"
-          width="399.05"
+          width="399.72"
           height="8"
           fill="#4F5D95"
         />
@@ -155,9 +155,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="399.05"
+          x="399.72"
           y="0"
-          width="10.77"
+          width="10.25"
           height="8"
           fill="#3178c6"
         />
@@ -165,19 +165,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="399.82"
+          x="399.97"
           y="0"
-          width="10.12"
-          height="8"
-          fill="#555555"
-        />
-      
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="399.94"
-          y="0"
-          width="10.06"
+          width="10.03"
           height="8"
           fill="#244776"
         />
@@ -188,28 +178,21 @@
     <g class="stagger" style="animation-delay: 450ms">
       <circle cx="5" cy="6" r="5" fill="#4F5D95" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        PHP 99.76% (79.6 MB)
+        PHP 99.93% (55.6 MB)
       </text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="stagger" style="animation-delay: 600ms">
       <circle cx="5" cy="6" r="5" fill="#3178c6" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        TypeScript 0.19% (158.2 KB)
+        TypeScript 0.06% (35.9 KB)
       </text>
     </g>
   </g></g><g transform="translate(200, 0)"><g transform="translate(0, 0)">
     <g class="stagger" style="animation-delay: 450ms">
-      <circle cx="5" cy="6" r="5" fill="#555555" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        C 0.03% (23.6 KB)
-      </text>
-    </g>
-  </g><g transform="translate(0, 25)">
-    <g class="stagger" style="animation-delay: 600ms">
       <circle cx="5" cy="6" r="5" fill="#244776" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        CoffeeScript 0.02% (13.0 KB)
+        CoffeeScript 0.01% (4.2 KB)
       </text>
     </g>
   </g></g>

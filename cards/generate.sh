@@ -23,12 +23,38 @@ OUT="$(dirname "$0")"
 THEME="theme_light=light_github&theme_dark=github_dark&hide_border=true"
 
 # markup, styling and config languages, Hack (only a few bytes), and JavaScript
-HIDE="css,html,less,twig,scss,sass,stylus,markdown,dockerfile,makefile,shell,batchfile,powershell,smarty,blade,handlebars,ejs,hcl,nix,procfile,vue,yacc,roff,xslt,apacheconf,hack,javascript"
+HIDE="go%20template,bibtex%20style,css,html,less,twig,scss,sass,stylus,markdown,dockerfile,makefile,shell,batchfile,powershell,smarty,blade,handlebars,ejs,hcl,nix,procfile,vue,yacc,roff,xslt,apacheconf,hack,javascript"
 
-# every repo I own, belong to through an org, or collaborate on, public and private.
+# Repos I own, plus repos in orgs I own (admin) that I've committed to. GitHub doesn't
+# record who created a repo, so committing is the proxy. Public and private.
+# The card can't filter by org, so every other repo it would see is excluded by name.
+# The list is built here at run time, so private repo names never get committed.
+# sotap is also excluded: it holds ~42 MB of generated TeX and swamps everything else.
 # stats_format=both shows the percentage and the size in bytes (GitHub doesn't expose line counts).
-# sotap is excluded: it holds ~42 MB of generated TeX and swamps everything else.
-LANGS="$SERVER/api/top-langs?username=$USER_NAME&layout=compact&langs_count=8&stats_format=both&card_width=450&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR&exclude_repo=sotap&hide=$HIDE&$THEME"
+# Needs the gh CLI, logged in as me.
+exclude_list() {
+  local admin_orgs
+  admin_orgs=" $(gh api user/memberships/orgs --paginate --jq '.[] | select(.role == "admin") | .organization.login' | tr '\n' ' ') "
+  local keep=() drop=()
+  while IFS=$'\t' read -r owner name; do
+    if [ "$owner" = "$USER_NAME" ]; then
+      keep+=("$name")
+    elif [[ "$admin_orgs" == *" $owner "* ]] &&
+      gh api "repos/$owner/$name/contributors?per_page=100" --jq '.[].login' 2>/dev/null | grep -qx "$USER_NAME"; then
+      keep+=("$name")
+    else
+      drop+=("$name")
+    fi
+  done < <(gh api graphql --paginate -f query='query($endCursor: String) { viewer {
+      repositories(first: 100, after: $endCursor, isFork: false,
+        ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR]) {
+        pageInfo { hasNextPage endCursor } nodes { name owner { login } } } } }' \
+    --jq '.data.viewer.repositories.nodes[] | "\(.owner.login)\t\(.name)"')
+  # exclude_repo matches names only: never exclude a name one of my kept repos also uses
+  { echo sotap; printf '%s\n' "${drop[@]}" | grep -vxF -f <(printf '%s\n' "${keep[@]}"); } | sort -u | paste -sd, -
+}
+EXCLUDE="$(exclude_list)"
+LANGS="$SERVER/api/top-langs?username=$USER_NAME&layout=compact&langs_count=8&stats_format=both&card_width=450&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR&exclude_repo=$EXCLUDE&hide=$HIDE&$THEME"
 
 fetch() {
   curl -sSf "$1" -o "$OUT/$2"
