@@ -22,8 +22,8 @@ OUT="$(dirname "$0")"
 # follow the viewer's light or dark GitHub theme
 THEME="theme_light=light_github&theme_dark=github_dark&hide_border=true"
 
-# markup, styling and config languages, plus Hack, which only shows up as a few bytes
-HIDE="css,html,less,twig,scss,sass,stylus,markdown,dockerfile,makefile,shell,batchfile,powershell,smarty,blade,handlebars,ejs,hcl,nix,procfile,vue,yacc,roff,xslt,apacheconf,hack"
+# markup, styling and config languages, Hack (only a few bytes), and JavaScript
+HIDE="css,html,less,twig,scss,sass,stylus,markdown,dockerfile,makefile,shell,batchfile,powershell,smarty,blade,handlebars,ejs,hcl,nix,procfile,vue,yacc,roff,xslt,apacheconf,hack,javascript"
 
 # every repo I own, belong to through an org, or collaborate on, public and private.
 # stats_format=both shows the percentage and the size in bytes (GitHub doesn't expose line counts).
