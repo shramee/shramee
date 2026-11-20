@@ -10,7 +10,7 @@ Founder of [MIST.cash](https://mist.cash). Based in Singapore.
 
 </div>
 
-I write zero-knowledge circuits and the payments infrastructure around them. Most of my time goes into pairings, recursive Groth16, Cairo and Starknet.
+I write cryptography primitives, ZK circuits and the privacy infrastructure. Most of my time goes into pairings, recursion, post-quantum schemes and my private payments startup MIST.cash.
 
 ## Highlights
 
@@ -35,7 +35,6 @@ Bring your own compliance to private payments. Each fintech or compliance provid
 | [mistcash/pq](https://github.com/mistcash/pq) | Post-quantum messaging for private payments and peer coordination. |
 | [mistcash/groth16-wasm-webgpu](https://github.com/mistcash/groth16-wasm-webgpu) | Browser benchmark of arkworks, gnark and snarkjs on a 53k-constraint circuit. |
 | [shramee/noir-elgamal](https://github.com/shramee/noir-elgamal) | Additively homomorphic ElGamal on elliptic curves, in Noir. |
-| [shramee/useless-zkvm](https://github.com/shramee/useless-zkvm) | A very small zkVM on Stwo. |
 
 ## Open source contributions
 
@@ -47,7 +46,7 @@ Bring your own compliance to private payments. Each fintech or compliance provid
 | **arkworks** | [Stark curve and large 2-adicity field tests](https://github.com/arkworks-rs/algebra/pull/1001) |
 | **Cairo** | [u384 serde in 2 felts](https://github.com/starkware-libs/cairo/pull/6789) |
 | **Alexandria** | [ed25519 optimisations](https://github.com/keep-starknet-strange/alexandria/pull/306), [sha512 optimisation](https://github.com/keep-starknet-strange/alexandria/pull/308), [u512 arithmetic](https://github.com/keep-starknet-strange/alexandria/pull/303) |
-| **Dojo** | [Writer contracts](https://github.com/dojoengine/dojo/pull/912) (co-authored), [schema macro](https://github.com/dojoengine/dojo/pull/920), [enum introspection](https://github.com/dojoengine/dojo/pull/1019), [model read/write access](https://github.com/dojoengine/dojo/pull/1102), [bytes31 introspection](https://github.com/dojoengine/dojo/pull/2661) |
+| **Dojo** | [Writer contracts](https://github.com/dojoengine/dojo/pull/912), [schema macro](https://github.com/dojoengine/dojo/pull/920), [enum introspection](https://github.com/dojoengine/dojo/pull/1019), [model read/write access](https://github.com/dojoengine/dojo/pull/1102), [bytes31 introspection](https://github.com/dojoengine/dojo/pull/2661) |
 
 Older Starknet tools: [Hanji](https://github.com/shramee/hanji) generates docs for Cairo libraries. [shhtarknet](https://github.com/shramee/shhtarknet) keeps secrets for Starknet contracts. [wasm-blockifier](https://github.com/shramee/wasm-blockifier) runs the Starknet blockifier in WASM.
 
@@ -71,4 +70,3 @@ Older Starknet tools: [Hanji](https://github.com/shramee/hanji) generates docs f
   <img src="cards/top-langs-2014-2021.svg" alt="Languages in repos last pushed from 2014 to 2021" />
 </div>
 
-<sub>Includes private repos and contributions. Repos are grouped by last push. Generated locally with <a href="https://github.com/stats-organization/github-stats-extended">github-stats-extended</a>, see <a href="cards/generate.sh">cards/generate.sh</a>.</sub>
