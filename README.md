@@ -65,8 +65,7 @@ Older Starknet tools: [Hanji](https://github.com/shramee/hanji) generates docs f
 <div align="center">
   <img src="cards/stats.svg" alt="Shramee's GitHub stats" />
   <br />
-  <img src="cards/top-langs-2022-now.svg" alt="Languages in repos last pushed from 2022 to now" />
-  <br />
-  <img src="cards/top-langs-2014-2021.svg" alt="Languages in repos last pushed from 2014 to 2021" />
+  <img width=250 src="cards/top-langs-2022-now.svg" alt="Languages in repos last pushed from 2022 to now" />
+  <img width=250 src="cards/top-langs-2014-2021.svg" alt="Languages in repos last pushed from 2014 to 2021" />
 </div>
 
