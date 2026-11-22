@@ -9,9 +9,10 @@
 -->
 <img align=right width=300 src="cards/stats.svg" alt="Shramee's GitHub stats" />
 
-[![X @shrameetweets](https://img.shields.io/badge/@shrameetweets-000000?style=flat&logo=x&logoColor=white)](https://x.com/shrameetweets)
-[![mist.cash](https://img.shields.io/badge/mist.cash-1f2328?style=flat&logo=googlechrome&logoColor=white)](https://mist.cash)
-[![X @_mistcash](https://img.shields.io/badge/@__mistcash-000000?style=flat&logo=x&logoColor=white)](https://x.com/_mistcash)
+<a href="https://x.com/shrameetweets"><img src="https://img.shields.io/badge/@shrameetweets-000000?style=flat&logo=x&logoColor=white" alt="X @shrameetweets" /></a>
+<a href="https://mist.cash"><img src="https://img.shields.io/badge/mist.cash-ddd?style=flat&logo=gitconnected&logoColor=111111" alt="mist.cash" /></a>
+<a href="https://x.com/_mistcash"><img src="https://img.shields.io/badge/@__mistcash-000000?style=flat&logo=x&logoColor=white" alt="X @_mistcash" /></a>
+<img src="langs.png" alt="Rust, Go, Cairo, Solidity" height="20" />
 
 I write cryptography primitives, ZK circuits and the privacy infrastructure. Most of my time goes into pairings, recursion, post-quantum schemes and my private payments startup MIST.cash.
 
